@@ -12,6 +12,7 @@ public class LevelBuilder : MonoBehaviour
 
     public StartRoom startRoom;
     public EndRoom endRoom; 
+    
 
     List<Room> placedRooms = new List<Room>();
 
@@ -80,8 +81,106 @@ public class LevelBuilder : MonoBehaviour
     }
     void PlaceRooms()
     {
-        print("placed a random room from list");
+        //instantiate room
+    
+        Room currentRoom = Instantiate(roomPrefabs[Random.Range(0,roomPrefabs.Count)]) as Room;
+        currentRoom.transform.parent = this.transform;
+
+        //create doorway list to loop over
+        List<DoorWay> AllAvailableDoorways = new List<DoorWay> (availableDoorways);
+        List<DoorWay> CurrentRoomDoorways = new List<DoorWay>();
+        AddDoorwaysToList(currentRoom, ref CurrentRoomDoorways);
+
+        // add new doorways to list of available doorways
+        AddDoorwaysToList(currentRoom, ref availableDoorways);
+
+        bool roomPlaced = false;
+
+        //try all available doorways
+        foreach (DoorWay availableDoorway in AllAvailableDoorways)
+        {
+            //try all available doorways  in the current room
+            foreach(DoorWay currentDoorway in CurrentRoomDoorways)
+            {
+                //position room
+                PositionRoomAtDoorway(ref currentRoom, currentDoorway, availableDoorway);
+
+                //check room overlaps
+                if (CheckRoomOverlap(currentRoom)){
+                    continue;
+                }
+
+                roomPlaced = true;
+
+                //add room to list
+                placedRooms.Add(currentRoom);
+
+                //remove occupied doorways
+                currentDoorway.gameObject.SetActive(false);
+                availableDoorways.Remove(currentDoorway);
+
+                availableDoorway.gameObject.SetActive(false);
+                availableDoorways.Remove(availableDoorway);
+
+                // exit loop if room is placed
+                break;
+            }
+            // see if the room is placed
+            if(roomPlaced){
+                break;
+            }
+        }
+        if (!roomPlaced)
+        {
+            Destroy(currentRoom.gameObject);
+            ResetLevelGenerator();
+        }
+        //print("placed a random room from list");
     }
+
+    void PositionRoomAtDoorway (ref Room room, DoorWay roomDoorway, DoorWay targetDoorway)
+    {
+        // zero out room's position and rotation
+        room.transform.position = Vector3.zero;
+        room.transform.rotation = Quaternion.identity;
+
+        // rotate room to match previous doorway orientation
+        Vector3 targetDoorwayEuler = targetDoorway.transform.eulerAngles;
+        Vector3 roomDoorwayEuler = roomDoorway.transform.eulerAngles;
+        float deltaAngle = Mathf.DeltaAngle(roomDoorwayEuler.y,targetDoorwayEuler.y);
+        Quaternion CurrentRoomTargetRotation = Quaternion.AngleAxis(deltaAngle, Vector3.up);
+        room.transform.rotation = CurrentRoomTargetRotation * Quaternion.Euler(0,180f,0);
+
+        // postion room
+        Vector3 roomPositionOffset = roomDoorway.transform.position - room.transform.position;
+        room.transform.position = targetDoorway.transform.position - roomPositionOffset;
+    }
+
+    bool CheckRoomOverlap(Room room)
+    {
+        Bounds bounds = room.RoomBounds;
+        bounds.center = room.transform.position; 
+        bounds.Expand(-0.1f);
+
+        Collider[] colliders = Physics.OverlapBox(bounds.center,bounds.size/2, room.transform.rotation,roomLayerMask);
+        //ignore collision with the current room
+        if (colliders.Length > 0) 
+        {
+            foreach (Collider c in colliders)
+            {
+                if(c.transform.parent.gameObject.Equals(room.gameObject))
+                {
+                    print("all good");
+                    continue;
+                }else {
+                    print("overlap detected");
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     void PlaceEndRoom()
     {
         print("place endroom");

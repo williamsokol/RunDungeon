@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6462816393479150704}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Doorways
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1219499328460893360}
   - component: {fileID: 591734589605961717}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Start Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ MonoBehaviour:
   doorWays:
   - {fileID: 635321827797269182}
   - {fileID: 2563190628674571989}
-  meshCollider: {fileID: 0}
+  meshCollider: {fileID: 1211498220}
 --- !u!64 &1211498220
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -488,6 +488,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e19cf3ef49fc1a242897f3a12b84ae86,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e19cf3ef49fc1a242897f3a12b84ae86, type: 3}

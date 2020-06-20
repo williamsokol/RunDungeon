@@ -24,7 +24,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3244847059423641861}
   - component: {fileID: 6222305449489138699}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: 'T Corridor '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ MonoBehaviour:
   - {fileID: 3162705663893961213}
   - {fileID: 6699713443173589143}
   - {fileID: 755592960222201974}
-  meshCollider: {fileID: 0}
+  meshCollider: {fileID: 810934369275598953}
 --- !u!1 &7103213921502028277
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,7 +74,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1788757569219958361}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Doorways
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,6 +292,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 51ef579bf3e85b24a98552306990af7a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51ef579bf3e85b24a98552306990af7a, type: 3}
