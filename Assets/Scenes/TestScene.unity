@@ -147,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 340632366}
   Ycomponent: 0
-  movingSpeed: 3
+  movingSpeed: 8
 --- !u!143 &340632369
 CharacterController:
   m_ObjectHideFlags: 0
