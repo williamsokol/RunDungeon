@@ -44,6 +44,7 @@ public class PlayerControll : MonoBehaviour
             anim.SetInteger("IsFight", 5);
         }
     }
+
     void Move()
     {
         Ycomponent += Physics.gravity.y * Time.deltaTime;
