@@ -11,6 +11,7 @@ public class ItemPicker : MonoBehaviour
         if (other.GetComponentInParent<Item>())
         {
             print("itemNearby");
+            other.GetComponentInParent<Item>().AddInInventory(inventory);
         }
     }
 }
