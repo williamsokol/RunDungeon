@@ -6,7 +6,7 @@ public class PlayerControll : MonoBehaviour
 {
     private Transform           cam;
     private CharacterController charact;
-    private Animator            anim;
+    public  Animator            anim;
 
     public float Ycomponent;
     public float movingSpeed;
@@ -27,10 +27,10 @@ public class PlayerControll : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            int IsFight = Random.Range(1, 4);
-            anim.SetInteger("IsFight", IsFight);
+            //int IsFight = Random.Range(1, 4);
+            //anim.SetInteger("IsFight", IsFight);
         }
-        if (Input.GetButtonDown("Fire2")) { anim.SetInteger("IsFight", 4); }
+        //if (Input.GetButtonDown("Fire2")) { anim.SetInteger("IsFight", 4); }
     }
     void Move()
     {
@@ -49,9 +49,9 @@ public class PlayerControll : MonoBehaviour
         if (inputforce > 0.7f && charact.isGrounded)
         {
             charact.Move(transform.forward * movingSpeed * Time.deltaTime);
-            //anim.SetBool("IsRun", true);
+            anim.SetBool("IsRun", true);
         }
-        //if (inputforce == 0) { anim.SetBool("IsRun", false); }
+        if (inputforce == 0) { anim.SetBool("IsRun", false); }
 
         charact.Move(new Vector3(0, Ycomponent, 0) * Time.deltaTime);
     }
