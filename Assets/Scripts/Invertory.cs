@@ -8,6 +8,7 @@ public class Invertory : MonoBehaviour
     public GameObject weapon;
     public GameObject sheld;
 
+    public Transform crate;
 
     public List<GameObject> backpack;
 }

@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject colliderBox;
+    public GameObject model;
 
-    // Update is called once per frame
-    void Update()
+    public void AddInInventory(Invertory inventory)
     {
-        
+        inventory.backpack.Add(gameObject);
+        transform.position = inventory.crate.position;
+        transform.SetParent(inventory.crate);
+        colliderBox.SetActive(false);
+        model.SetActive(false);
     }
 }
