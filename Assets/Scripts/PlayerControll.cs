@@ -6,7 +6,7 @@ public class PlayerControll : MonoBehaviour
 {
     private Transform           cam;
     private CharacterController charact;
-    private Animator            anim;
+    public  Animator            anim;
 
     public float Ycomponent;
     public float movingSpeed;
@@ -25,13 +25,26 @@ public class PlayerControll : MonoBehaviour
 
     void GetActiveButtons()
     {
+        if (anim.GetInteger("IsFight") != 0)
+        {
+            anim.SetInteger("IsFight", 0);
+        }
+
         if (Input.GetButtonDown("Fire1"))
         {
             int IsFight = Random.Range(1, 4);
             anim.SetInteger("IsFight", IsFight);
         }
-        if (Input.GetButtonDown("Fire2")) { anim.SetInteger("IsFight", 4); }
+        if (Input.GetButtonDown("Fire2"))
+        {
+            anim.SetInteger("IsFight", 4);
+        }
+        if (Input.GetButtonDown("Fire3"))
+        {
+            anim.SetInteger("IsFight", 5);
+        }
     }
+
     void Move()
     {
         Ycomponent += Physics.gravity.y * Time.deltaTime;
@@ -46,12 +59,16 @@ public class PlayerControll : MonoBehaviour
 
 
         float inputforce = Vector3.Magnitude(new Vector3(H, 0, Y));
+
         if (inputforce > 0.7f && charact.isGrounded)
         {
             charact.Move(transform.forward * movingSpeed * Time.deltaTime);
-            //anim.SetBool("IsRun", true);
+            anim.SetBool("IsRun", true);
         }
-        //if (inputforce == 0) { anim.SetBool("IsRun", false); }
+        if (inputforce == 0)
+        {
+            anim.SetBool("IsRun", false);
+        }
 
         charact.Move(new Vector3(0, Ycomponent, 0) * Time.deltaTime);
     }
