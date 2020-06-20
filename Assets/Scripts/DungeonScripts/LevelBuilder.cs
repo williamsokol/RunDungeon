@@ -183,7 +183,44 @@ public class LevelBuilder : MonoBehaviour
 
     void PlaceEndRoom()
     {
-        print("place endroom");
+        endRoom = Instantiate(endRoomPrefab) as EndRoom;
+        endRoom.transform.parent = this.transform;
+
+        //create doorway list to loop over
+        List<DoorWay> AllAvailableDoorways = new List<DoorWay> (availableDoorways);
+        DoorWay doorway = endRoom.doorWays [0];
+
+        bool roomPlaced = false;
+
+        //try all available doorways
+        foreach (DoorWay availableDoorway in AllAvailableDoorways) {
+
+            //position room
+            Room room = (Room)endRoom;
+            PositionRoomAtDoorway(ref room, doorway, availableDoorway);
+            //check room overlaps
+            if (CheckRoomOverlap(endRoom)){
+                continue;
+            }
+
+            roomPlaced = true;
+        
+            //remove occupied doorways
+            doorway.gameObject.SetActive(false);
+            availableDoorways.Remove(doorway);
+
+            availableDoorway.gameObject.SetActive(false);
+            availableDoorways.Remove(availableDoorway);
+
+            // exit loop if room is placed
+            break;
+        }
+
+        if (!roomPlaced)
+        {
+            ResetLevelGenerator();
+        }
+
     }
     void ResetLevelGenerator()
     {
