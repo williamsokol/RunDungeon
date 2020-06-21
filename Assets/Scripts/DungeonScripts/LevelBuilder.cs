@@ -8,6 +8,9 @@ public class LevelBuilder : MonoBehaviour
     public Player playerPrefab;
     public List<Room> roomPrefabs = new List<Room>();
     public Vector2 iterationRange = new Vector2(3,10);
+
+    public List<Item> itemsPrefabs = new List<Item>();
+    public List<Transform> SpawnSpots = new List<Transform>();
     
 
     List<DoorWay> availableDoorways = new List<DoorWay>();
@@ -52,6 +55,11 @@ public class LevelBuilder : MonoBehaviour
 
         //places the end room
         PlaceEndRoom();
+
+        // place item
+        print(SpawnSpots.Count +" "+ itemsPrefabs.Count);
+        Instantiate(itemsPrefabs[Random.Range(0,itemsPrefabs.Count) ],SpawnSpots[Random.Range(0,SpawnSpots.Count)].transform);
+        
         yield return interval;
 
         print("level generation done");
@@ -60,6 +68,7 @@ public class LevelBuilder : MonoBehaviour
         player = Instantiate(playerPrefab) as Player;
         player.transform.position = startRoom.playerStart.position;
         player.transform.rotation = startRoom.playerStart.rotation;
+
 
         //yield return new WaitForSeconds(3);
         //ResetLevelGenerator();
@@ -78,7 +87,7 @@ public class LevelBuilder : MonoBehaviour
         startRoom.transform.position =  Vector3.zero;
         startRoom.transform.rotation = Quaternion.identity;
 
-        print("place start room");
+        // print("place start room");
     }
     void AddDoorwaysToList(Room room, ref List<DoorWay> List)
     {
@@ -86,6 +95,14 @@ public class LevelBuilder : MonoBehaviour
         {
             int r = Random.Range(0,List.Count);
             List.Insert(r, doorWay);
+        }
+    }
+    void AddSpawnSpotsToList(Room room)
+    {
+        //Item floorItem = Instantiate(itemsPrefabs[Random.Range(0,itemsPrefabs.Count)]) as Item;
+        foreach(Transform spot in room.spawnPlaces)
+        {
+            SpawnSpots.Add(spot);
         }
     }
     void PlaceRooms()
@@ -99,6 +116,8 @@ public class LevelBuilder : MonoBehaviour
         List<DoorWay> AllAvailableDoorways = new List<DoorWay> (availableDoorways);
         List<DoorWay> CurrentRoomDoorways = new List<DoorWay>();
         AddDoorwaysToList(currentRoom, ref CurrentRoomDoorways);
+
+        AddSpawnSpotsToList(currentRoom);
 
         // add new doorways to list of available doorways
         AddDoorwaysToList(currentRoom, ref availableDoorways);
@@ -146,7 +165,7 @@ public class LevelBuilder : MonoBehaviour
         }
         //print("placed a random room from list");
     }
-
+    
     void PositionRoomAtDoorway (ref Room room, DoorWay roomDoorway, DoorWay targetDoorway)
     {
         // zero out room's position and rotation
@@ -182,7 +201,7 @@ public class LevelBuilder : MonoBehaviour
                     print("all good");
                     continue;
                 }else {
-                    print("overlap detected");
+                    //print("overlap detected");
                     return true;
                 }
             }
@@ -233,7 +252,7 @@ public class LevelBuilder : MonoBehaviour
     }
     void ResetLevelGenerator()
     {
-        print("reset level builder");
+        //print("reset level builder");
 
         StopCoroutine("GenerateLevel");
 
