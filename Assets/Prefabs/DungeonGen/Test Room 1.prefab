@@ -164,9 +164,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1219499328460893360}
-  - component: {fileID: 591734589605961717}
   m_Layer: 0
-  m_Name: Start Room
+  m_Name: Start Room 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -189,23 +188,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &591734589605961717
-MonoBehaviour:
+--- !u!64 &1211498220
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7793229590080315569}
+  m_GameObject: {fileID: 8268471642649511474}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 343f4afd81aa2f84eb84140bbc8048d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorWays:
-  - {fileID: 635321827797269182}
-  - {fileID: 2563190628674571989}
-  meshCollider: {fileID: 1211498220}
---- !u!64 &1211498220
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 125628844117123920, guid: e19cf3ef49fc1a242897f3a12b84ae86, type: 3}
+--- !u!64 &8524485950175650697
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -299,18 +296,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5565024850461381453}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2563190628674571989 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7973826369525833112, guid: b6c49eb8b415c2348b90ecbd2e91a132,
-    type: 3}
-  m_PrefabInstance: {fileID: 5565024850461381453}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4de2b076c5c1196428c5bfdda913d21c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7384114483868903206
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -391,18 +376,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7384114483868903206}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &635321827797269182 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7973826369525833112, guid: b6c49eb8b415c2348b90ecbd2e91a132,
-    type: 3}
-  m_PrefabInstance: {fileID: 7384114483868903206}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4de2b076c5c1196428c5bfdda913d21c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &9114981044361034595
 PrefabInstance:
   m_ObjectHideFlags: 0
