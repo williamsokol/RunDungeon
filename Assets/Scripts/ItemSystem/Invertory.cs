@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Invertory : MonoBehaviour
 {
+    public Transform shieldSlot;
+    public Transform weaponSlot;
+
     public GameObject armor;
     public GameObject weapon;
     public GameObject sheld;
