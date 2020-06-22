@@ -58,7 +58,8 @@ public class LevelBuilder : MonoBehaviour
 
         // place item
         print(SpawnSpots.Count +" "+ itemsPrefabs.Count);
-        Instantiate(itemsPrefabs[Random.Range(0,itemsPrefabs.Count) ],SpawnSpots[Random.Range(0,SpawnSpots.Count)].transform);
+        Transform itemSpot = SpawnSpots[Random.Range(0,SpawnSpots.Count)].transform;
+        Instantiate(itemsPrefabs[Random.Range(0,itemsPrefabs.Count) ],itemSpot.position, itemSpot.rotation);
         
         yield return interval;
 
