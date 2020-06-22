@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class LevelBuilder : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class LevelBuilder : MonoBehaviour
     public StartRoom startRoom;
     public EndRoom endRoom; 
     
+    public NavMeshSurface EnemyPathing;
 
     List<Room> placedRooms = new List<Room>();
 
@@ -27,6 +29,7 @@ public class LevelBuilder : MonoBehaviour
 
     void Start()
     {
+        EnemyPathing = GetComponent<NavMeshSurface>();
         roomLayerMask = LayerMask.GetMask("Room");
         StartCoroutine("GenerateLevel");   
     }
@@ -60,6 +63,11 @@ public class LevelBuilder : MonoBehaviour
         print(SpawnSpots.Count +" "+ itemsPrefabs.Count);
         Transform itemSpot = SpawnSpots[Random.Range(0,SpawnSpots.Count)].transform;
         Instantiate(itemsPrefabs[Random.Range(0,itemsPrefabs.Count) ],itemSpot.position, itemSpot.rotation);
+
+        yield return interval;
+
+        // Build navMesh
+        EnemyPathing.BuildNavMesh();
         
         yield return interval;
 
