@@ -8,7 +8,7 @@ public class InvertoryUI : MonoBehaviour
     public Invertory     inentory;
     public GameObject    invUI;
     public RectTransform content;
-    public GameObject    itemIconPrefab;
+    public GameObject    itemUIPrefab;
 
     void Update()
     {
@@ -27,15 +27,20 @@ public class InvertoryUI : MonoBehaviour
     {
         invUI.SetActive(true);
 
-        Dictionary<GameObject, GameObject> invent = new Dictionary<GameObject, GameObject>();
+        //Dictionary<GameObject, GameObject> invent = new Dictionary<GameObject, GameObject>();
 
         foreach(GameObject item in inentory.backpack)
         {
-            GameObject _item = Instantiate(itemIconPrefab);
+            GameObject _item = Instantiate(itemUIPrefab);
             _item.GetComponent<RectTransform>().SetParent(content);
-            invent.Add(_item, item);
+            //invent.Add(_item, item);
+
+            ItemUI itemUi      = _item.GetComponent<ItemUI>();
+            itemUi.inventory   = inentory;
+            itemUi.item        = item.GetComponent<Item>();
+
         }
-        print("Dictionary have" + invent.Count);
+        //print("Dictionary have" + invent.Count);
     }
 
     public void HideInventoryUI()

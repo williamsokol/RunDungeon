@@ -15,4 +15,13 @@ public class Item : MonoBehaviour
         colliderBox.SetActive(false);
         model.SetActive(false);
     }
+
+    public void DropOutInventory(Invertory inventory)
+    {
+        inventory.backpack.Remove(gameObject);
+        transform.SetParent(null);
+        transform.position += Vector3.forward * 3f;
+        colliderBox.SetActive(true);
+        model.SetActive(true);
+    }
 }

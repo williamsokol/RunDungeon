@@ -598,7 +598,7 @@ MonoBehaviour:
   inentory: {fileID: 8046485617096069528}
   invUI: {fileID: 1910121223}
   content: {fileID: 1175951041}
-  itemIconPrefab: {fileID: 5304159912129005019, guid: 59e8d09cf0e0ebb46b210e08bfb7171e,
+  itemUIPrefab: {fileID: 5304159912129005019, guid: 59e8d09cf0e0ebb46b210e08bfb7171e,
     type: 3}
 --- !u!1 &629462267
 GameObject:
