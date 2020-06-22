@@ -1172,6 +1172,7 @@ Transform:
   - {fileID: 9162805509096319564}
   - {fileID: 1235862838150956328}
   - {fileID: 1914255504364353242}
+  - {fileID: 4933723062555395403}
   m_Father: {fileID: 5492565121207588748}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1300,6 +1301,7 @@ Transform:
   - {fileID: 3335247734382503841}
   - {fileID: 3771071363592516219}
   - {fileID: 3000783207758704242}
+  - {fileID: 7847590155531763951}
   m_Father: {fileID: 683874670566776029}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1394,6 +1396,36 @@ Transform:
   - {fileID: 7848603084488196460}
   m_Father: {fileID: 2035885173662440121}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6181109594389778012
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7847590155531763951}
+  m_Layer: 0
+  m_Name: ' ShieldSlot'
+  m_TagString: Untagged
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7847590155531763951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6181109594389778012}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3861476997331269607}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6250192562252893973
 GameObject:
@@ -1792,6 +1824,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac9e29e96c400f49897028a62eaa48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shieldSlot: {fileID: 7847590155531763951}
+  weaponSlot: {fileID: 4933723062555395403}
   armor: {fileID: 0}
   weapon: {fileID: 0}
   sheld: {fileID: 0}
@@ -2066,6 +2100,36 @@ Transform:
   - {fileID: 2677316700969360760}
   m_Father: {fileID: 8511645804699377132}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8253929294235564709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4933723062555395403}
+  m_Layer: 0
+  m_Name: WeaponSlot
+  m_TagString: Untagged
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4933723062555395403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8253929294235564709}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8511645804699377132}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8535309998166401099
 GameObject:

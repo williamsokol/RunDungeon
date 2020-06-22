@@ -72,4 +72,5 @@ public class PlayerControll : MonoBehaviour
 
         charact.Move(new Vector3(0, Ycomponent, 0) * Time.deltaTime);
     }
+
 }
