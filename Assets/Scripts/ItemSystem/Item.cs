@@ -6,6 +6,10 @@ public class Item : MonoBehaviour
 {
     public GameObject pikColliderBox;
     public GameObject model;
+    public int Attack, Def, Hp;
+
+    //item type: 1=weponSlot, 2=Amor, 3=offHand. 
+    public int itemType;
 
     public void AddInInventory(Invertory inventory)
     {
@@ -22,6 +26,7 @@ public class Item : MonoBehaviour
         transform.SetParent(null);
         pikColliderBox.SetActive(true);
         model.SetActive(true);
+        Player.instance.DroppedWornItem(this);
 
         Ray        ray = new Ray(transform.position + transform.forward * 2f, Vector3.down);
         RaycastHit hit = new RaycastHit();
@@ -40,6 +45,7 @@ public class Item : MonoBehaviour
     public void UseThisItem(Invertory inventory)
     {
         transform.GetComponent<IItem>().UseItem(inventory);
+        Player.instance.UpdateItemStats(this);
         model.SetActive(true);
     }
 }

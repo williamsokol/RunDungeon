@@ -4,15 +4,51 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   public int Attack,Def, Hp;
+   public int currentHp;
 
-    // Update is called once per frame
-    void Update()
-    {
+    public Item[] ItemSlots = {null,null,null};
         
-    }
+
+   public static Player instance;
+
+   void Awake()
+   {
+       instance = this;
+
+   }
+
+   public void UpdateItemStats(Item newItem)
+   {
+        print(ItemSlots[1]);    
+        if(ItemSlots[newItem.itemType] != null)
+        {
+            Item oldItem = ItemSlots[newItem.itemType];
+            Attack -= oldItem.Attack;
+            Def -= oldItem.Def;
+            Hp -= oldItem.Hp;
+        }
+
+        Attack += newItem.Attack;
+        Def += newItem.Def;
+        Hp += newItem.Hp;
+
+        ItemSlots[newItem.itemType] = newItem;
+   }
+
+   public void DroppedWornItem(Item DroppedItem)
+   {
+       // see if dropped it was one equiped
+        if(DroppedItem != ItemSlots[DroppedItem.itemType])
+        {
+            return;
+        }
+        // if it is do:
+        Attack -= DroppedItem.Attack;
+        Def -= DroppedItem.Def;
+        Hp -= DroppedItem.Hp;
+
+        ItemSlots[DroppedItem.itemType] = null;
+
+   }
 }

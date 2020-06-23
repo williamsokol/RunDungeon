@@ -14,4 +14,10 @@ public class Invertory : MonoBehaviour
     public Transform crate;
 
     public List<GameObject> backpack;
+
+    public static Invertory instance;
+
+    void Awake(){
+        instance = this;
+    }
 }

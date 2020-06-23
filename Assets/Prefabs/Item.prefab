@@ -185,5 +185,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4facebeca14fa7a4991ce9096dd5c5f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderBox: {fileID: 6071112706489264372}
+  pikColliderBox: {fileID: 0}
   model: {fileID: 6071112707395834488}
+  Attack: 11
+  Def: 11
+  Hp: 11
+  itemType: 1
