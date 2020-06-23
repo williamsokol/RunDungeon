@@ -60,7 +60,7 @@ public class PlayerControll : MonoBehaviour
 
         float inputforce = Vector3.Magnitude(new Vector3(H, 0, Y));
 
-        if (inputforce > 0.7f && charact.isGrounded)
+        if (inputforce > 0.1f)
         {
             charact.Move(transform.forward * movingSpeed * Time.deltaTime);
             anim.SetBool("IsRun", true);
@@ -70,7 +70,7 @@ public class PlayerControll : MonoBehaviour
             anim.SetBool("IsRun", false);
         }
 
-        charact.Move(new Vector3(0, Ycomponent, 0) * Time.deltaTime);
+        //charact.Move(new Vector3(0, 0, 0) * Time.deltaTime);
     }
 
 }
