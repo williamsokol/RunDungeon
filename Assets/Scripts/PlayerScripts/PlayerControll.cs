@@ -9,10 +9,11 @@ public class PlayerControll : MonoBehaviour
     public  Animator            anim;
 
     public float Ycomponent;
-    public float movingSpeed;
+    public float movingSpeed, i;
 
     void Start()
     {
+        i = movingSpeed;
         cam                 = Camera.main.transform;
         charact             = GetComponent<CharacterController>();
     }
@@ -34,6 +35,10 @@ public class PlayerControll : MonoBehaviour
         {
             int IsFight = Random.Range(1, 4);
             anim.SetInteger("IsFight", IsFight);
+            movingSpeed = 0;
+        }else if(anim.GetCurrentAnimatorStateInfo(0).IsName("FightPose")){
+            print("test");
+            movingSpeed = i;
         }
         if (Input.GetButtonDown("Fire2"))
         {
