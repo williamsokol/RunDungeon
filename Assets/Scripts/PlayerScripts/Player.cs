@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Player : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Player : MonoBehaviour
 
     public Item[] ItemSlots = {null,null,null};
     public Component[] PlayerCore;
+    public GameObject[] ChildernCore;
 
    public static Player instance;
 
@@ -70,28 +72,58 @@ public class Player : MonoBehaviour
         //(insert death anim)
         
         //Component component = PlayerControll;
-        MoveComponent(attacker);
+        MoveControlls(attacker);
+        Destroy(gameObject);
         
     }
-    void MoveComponent(EnemyAttack attacker)
+    void MoveControlls(EnemyAttack attacker)
     {
         
-        Component sourceComp =  PlayerCore[0];
-        //Type type = GetType(sourceComp);
+        //insert enemies stats into that players
+        EnemyStats enemyStats = attacker.GetComponent<EnemyStats>();
+        Attack = enemyStats.Attack;
+        Def = enemyStats.Def;
+        Hp = enemyStats.Hp;
+
+        attacker.gameObject.tag = "Player";
+        attacker.gameObject.transform.parent = null;
+
+        //remove new their AI
+        Destroy(attacker.gameObject.GetComponent<NavMeshAgent>());
+        Destroy(attacker.gameObject.GetComponent<EnemyMovement>());
+        Destroy(attacker.gameObject.GetComponent<EnemyAttack>());
+        Destroy(attacker.gameObject.GetComponent<EnemyStats>());
+        Destroy(attacker.gameObject.GetComponent<Rigidbody>());
+        Destroy(attacker.gameObject.transform.GetChild(0).gameObject);
         
-        FieldInfo[] sourceFields = sourceComp.GetType().GetFields(BindingFlags.Public | 
-                                                       BindingFlags.NonPublic | 
-                                                       BindingFlags.Instance);
-        
-        Component targetComp = attacker.gameObject.AddComponent(PlayerCore.GetType()) as Component;
-        int i = 0;
-        for(i = 0; i < sourceFields.Length; i++) {
-            var value = sourceFields[i].GetValue(sourceComp);
-        sourceFields[i].SetValue(targetComp, value);
+        //copy player components into enemy
+        for(int a = 0;a<PlayerCore.Length;a++){
+            Component sourceComp =  PlayerCore[a];
+            //Type type = GetType(sourceComp);
+            
+            FieldInfo[] sourceFields = sourceComp.GetType().GetFields(BindingFlags.Public | 
+                                                        BindingFlags.NonPublic | 
+                                                        BindingFlags.Instance);
+            
+            Component targetComp = attacker.gameObject.AddComponent(PlayerCore[a].GetType()) as Component;
+            int i = 0;
+            for(i = 0; i < sourceFields.Length; i++) {
+                var value = sourceFields[i].GetValue(sourceComp);
+            sourceFields[i].SetValue(targetComp, value);
+            }
+            
+            //Destroy(sourceComp);
+        }
+        //copy childern to enemy
+        foreach(GameObject child in ChildernCore)
+        {
+            Vector3 savePos = child.transform.localPosition;
+            Quaternion saveRot = child.transform.localRotation; 
+            child.transform.parent = attacker.transform;
+            child.transform.localPosition = savePos;
+            child.transform.localRotation = saveRot;
+            
         }
         
-         Destroy(sourceComp);
-    
     }
-
 }

@@ -34,7 +34,8 @@ public class LevelBuilder : MonoBehaviour
         EnemyPathing = GetComponent<NavMeshSurface>();
         roomLayerMask = LayerMask.GetMask("Room");
         StartCoroutine("GenerateLevel");
-        manager = GameObject.Find("GameManager"); 
+        manager = GameObject.Find("GameManager");
+        player = Player.instance; 
     }
 
     IEnumerator GenerateLevel()
@@ -304,6 +305,7 @@ public class LevelBuilder : MonoBehaviour
         }else
         {
             //stops the player from gettting draged down in the void
+            player = Player.instance;
             player.gameObject.GetComponent<CharacterController>().enabled = false;
             player.gameObject.transform.position = startRoom.playerStart.position;
         }

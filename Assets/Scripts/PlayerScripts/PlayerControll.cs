@@ -18,6 +18,7 @@ public class PlayerControll : MonoBehaviour
         cam                 = Camera.main.transform;
         charact             = GetComponent<CharacterController>();
         attack              = gameObject.GetComponentInChildren<PlayerAttack>();
+        //print(charact);
         
     }
 
@@ -60,8 +61,10 @@ public class PlayerControll : MonoBehaviour
 
     void Move()
     {
-        Ycomponent += Physics.gravity.y * Time.deltaTime;
-        if (charact.isGrounded & charact.velocity.y <= 0) { Ycomponent = 0f; }
+        print("test");
+        Ycomponent -= 5 * Time.deltaTime;
+        
+        
 
         float H     = Input.GetAxis("Horizontal");
         float Y     = Input.GetAxis("Vertical");
@@ -73,17 +76,19 @@ public class PlayerControll : MonoBehaviour
 
         float inputforce = Vector3.Magnitude(new Vector3(H, 0, Y));
 
+        Vector3 walk = transform.forward * movingSpeed * Time.deltaTime;
+
         if (inputforce > 0.1f)
         {
-            charact.Move(transform.forward * movingSpeed * Time.deltaTime);
+            charact.Move(new Vector3(walk.x,Ycomponent,walk.z));
+            if (charact.isGrounded ) { Ycomponent = 0f; }
             anim.SetBool("IsRun", true);
         }
         if (inputforce == 0)
         {
             anim.SetBool("IsRun", false);
         }
-
-        //charact.Move(new Vector3(0, 0, 0) * Time.deltaTime);
     }
+    
 
 }
