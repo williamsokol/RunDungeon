@@ -367,10 +367,9 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 1
-    functionName: 
+    functionName: NewFloor
     data: 
-    objectReferenceParameter: {fileID: 2383933918378831670, guid: 2428eefcf19b25b40aae228925e3fc27,
-      type: 3}
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

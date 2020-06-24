@@ -128,6 +128,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1696764838}
     m_Modifications:
+    - target: {fileID: 1919052970, guid: 9ee0b8bd6a73c5a42b1bb2ff33df3d25, type: 3}
+      propertyPath: attackSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919052970, guid: 9ee0b8bd6a73c5a42b1bb2ff33df3d25, type: 3}
+      propertyPath: attackDamage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3121563964992745317, guid: 9ee0b8bd6a73c5a42b1bb2ff33df3d25,
         type: 3}
       propertyPath: m_Name
@@ -619,7 +627,7 @@ MonoBehaviour:
   - {fileID: 6222305449489138699, guid: e69a2a525cae7bd47b739aa25e24726d, type: 3}
   iterationRange: {x: 3, y: 10}
   itemsPrefabs:
-  - {fileID: 2536815555765605942, guid: 152845fbe17eef8479632aee5864f15c, type: 3}
+  - {fileID: -567977118947621907, guid: 356609956710ca143bdb6cc43e0ffe00, type: 3}
   SpawnSpots: []
   startRoom: {fileID: 763519835}
   endRoom: {fileID: 0}
@@ -695,6 +703,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164019575580401525, guid: c64cb6a6f2fd8094fa34ca7ebc5f1c31,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7503108530050319823, guid: c64cb6a6f2fd8094fa34ca7ebc5f1c31,
         type: 3}
@@ -992,6 +1005,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fade
+      objectReference: {fileID: 0}
+    - target: {fileID: 2383933918378831670, guid: 2428eefcf19b25b40aae228925e3fc27,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2383933918378831671, guid: 2428eefcf19b25b40aae228925e3fc27,
         type: 3}

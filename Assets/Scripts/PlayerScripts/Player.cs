@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -9,7 +10,7 @@ public class Player : MonoBehaviour
    public int currentHp;
 
     public Item[] ItemSlots = {null,null,null};
-        
+    public Component[] PlayerCore;
 
    public static Player instance;
 
@@ -56,7 +57,7 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage,EnemyAttack attcker)
     {
-        currentHp -= damage*((Def-100)/100);
+        currentHp -= damage*((100-Def)/100);
 
         if (currentHp <= 0)
         {
@@ -69,23 +70,28 @@ public class Player : MonoBehaviour
         //(insert death anim)
         
         //Component component = PlayerControll;
-        /*
-        Component sourceComp = gameObject.GetComponent<PlayerControll>();
+        MoveComponent(attacker);
+        
+    }
+    void MoveComponent(EnemyAttack attacker)
+    {
+        
+        Component sourceComp =  PlayerCore[0];
+        //Type type = GetType(sourceComp);
+        
         FieldInfo[] sourceFields = sourceComp.GetType().GetFields(BindingFlags.Public | 
                                                        BindingFlags.NonPublic | 
                                                        BindingFlags.Instance);
         
-        attacker.AddComponent<sourceComp.GetType()>()
+        Component targetComp = attacker.gameObject.AddComponent(PlayerCore.GetType()) as Component;
         int i = 0;
         for(i = 0; i < sourceFields.Length; i++) {
             var value = sourceFields[i].GetValue(sourceComp);
         sourceFields[i].SetValue(targetComp, value);
-
+        }
         
          Destroy(sourceComp);
+    
     }
-    */
- }
-
 
 }
