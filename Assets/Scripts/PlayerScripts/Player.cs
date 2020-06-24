@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -65,6 +66,26 @@ public class Player : MonoBehaviour
     void Die(EnemyAttack attacker)
     {
         //swap into the body of the enemy that killed you
+        //(insert death anim)
+        
+        //Component component = PlayerControll;
+        /*
+        Component sourceComp = gameObject.GetComponent<PlayerControll>();
+        FieldInfo[] sourceFields = sourceComp.GetType().GetFields(BindingFlags.Public | 
+                                                       BindingFlags.NonPublic | 
+                                                       BindingFlags.Instance);
+        
+        attacker.AddComponent<sourceComp.GetType()>()
+        int i = 0;
+        for(i = 0; i < sourceFields.Length; i++) {
+            var value = sourceFields[i].GetValue(sourceComp);
+        sourceFields[i].SetValue(targetComp, value);
+
+        
+         Destroy(sourceComp);
     }
+    */
+ }
+
 
 }
