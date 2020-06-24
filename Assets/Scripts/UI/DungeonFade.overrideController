@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DungeonFade
+  m_Controller: {fileID: 9100000, guid: 34a063794714fa44288aaa22ad701bea, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 890060b84e0d2ef49a70057e7c1da555, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 890060b84e0d2ef49a70057e7c1da555, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: db3e536f41c18f446ac15fe14c5cd511, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ccbb70c516d0eab42993d1cd79118e93, type: 2}

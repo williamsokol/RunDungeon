@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
 
    public void UpdateItemStats(Item newItem)
    {
-        print(ItemSlots[1]);    
+        //print(ItemSlots[1]);    
         if(ItemSlots[newItem.itemType] != null)
         {
             Item oldItem = ItemSlots[newItem.itemType];

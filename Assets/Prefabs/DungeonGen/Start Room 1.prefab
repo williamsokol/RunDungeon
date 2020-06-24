@@ -165,6 +165,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1219499328460893360}
   - component: {fileID: 7264326053939139348}
+  - component: {fileID: 1373144162}
+  - component: {fileID: 1373144163}
   m_Layer: 0
   m_Name: Start Room 1
   m_TagString: Untagged
@@ -204,7 +206,33 @@ MonoBehaviour:
   doorWays:
   - {fileID: 635321827797269182}
   - {fileID: 2563190628674571989}
+  spawnPlaces: []
   meshCollider: {fileID: 1211498220}
+--- !u!65 &1373144162
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7793229590080315569}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1, z: 2}
+  m_Center: {x: 7, y: 1.5, z: 0}
+--- !u!114 &1373144163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7793229590080315569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e800410e694a484db6b5707071b0fee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &1211498220
 MeshCollider:
   m_ObjectHideFlags: 0
