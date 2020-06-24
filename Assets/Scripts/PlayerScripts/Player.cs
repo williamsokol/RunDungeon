@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
 
    void Awake()
    {
+       currentHp = Hp;
        instance = this;
        GameObject.Find("FollowCamera").GetComponent<CameraControll>().getCamera();
    }
@@ -54,7 +55,7 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHp -= damage;
+        currentHp -= damage*((Def-100)/100);
     }
 
 }

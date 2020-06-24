@@ -10,6 +10,12 @@ public class InvertoryUI : MonoBehaviour
     public RectTransform content;
     public GameObject    itemUIPrefab;
 
+    
+    public void GetInventory()
+    {
+        inentory = Invertory.instance; 
+    }
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I) && invUI.activeInHierarchy)

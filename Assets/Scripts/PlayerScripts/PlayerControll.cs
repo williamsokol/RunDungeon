@@ -18,6 +18,7 @@ public class PlayerControll : MonoBehaviour
         cam                 = Camera.main.transform;
         charact             = GetComponent<CharacterController>();
         attack              = gameObject.GetComponentInChildren<PlayerAttack>();
+        
     }
 
     void Update()
@@ -39,6 +40,7 @@ public class PlayerControll : MonoBehaviour
             int IsFight = Random.Range(1, 4);
             anim.SetInteger("IsFight", IsFight);
             movingSpeed = 0;
+            attack.EndAttack();
             attack.StartAttack();
             
         }else if(anim.GetCurrentAnimatorStateInfo(0).IsName("FightPose")){

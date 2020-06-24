@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1943924333}
   - component: {fileID: 1943924334}
+  - component: {fileID: 2448231681107652216}
   m_Layer: 0
   m_Name: AttackHitbox
   m_TagString: Untagged
@@ -44,6 +45,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1.4}
   m_Center: {x: 0, y: 1, z: 0.5}
+--- !u!114 &2448231681107652216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943924332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf4ab8d6c41c5284e8df57c3e69c3b3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  hitbox: {fileID: 0}
 --- !u!1 &71899037515665159
 GameObject:
   m_ObjectHideFlags: 0
@@ -1889,6 +1904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 4521694981477867445}
+  attack: {fileID: 0}
   Ycomponent: 0
   movingSpeed: 5
   i: 0
@@ -1904,7 +1920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bdbcc161e129a4e8035dd83e0131cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Attack: 0
+  Attack: 5
   Def: 0
   Hp: 0
   currentHp: 0

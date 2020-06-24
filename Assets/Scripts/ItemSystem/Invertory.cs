@@ -19,5 +19,7 @@ public class Invertory : MonoBehaviour
 
     void Awake(){
         instance = this;
+        InvertoryUI Inven = GameObject.Find("InGameScreen").GetComponent<InvertoryUI>();
+        Inven.GetInventory();
     }
 }

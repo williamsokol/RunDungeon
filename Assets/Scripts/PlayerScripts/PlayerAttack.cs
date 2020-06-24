@@ -31,7 +31,7 @@ public class PlayerAttack : MonoBehaviour
       
        if(other.gameObject.tag == "Enemy")
        {
-           print("hit enemy");
+           print(player.Attack);
            //they take dmg
             other.gameObject.GetComponent<EnemyStats>().TakeDamage(player.Attack);
        }
