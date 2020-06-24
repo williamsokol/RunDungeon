@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
    
     public void FadeToLevel()
     {
-        animator.SetTrigger("FadeOut");
+        animator.SetBool("FadeOut", true);
     }
 
     public void QuitGame()
@@ -25,4 +25,10 @@ public class MainMenu : MonoBehaviour
         Application.Quit(); 
     }
 
+    public void NewFloor()
+    {
+        GameObject.Find("LevelBuilder").GetComponent<LevelBuilder>().ResetLevelGenerator();
+        Time.timeScale = 1f;
+        animator.SetBool("FadeOut", false);
+    }
 }

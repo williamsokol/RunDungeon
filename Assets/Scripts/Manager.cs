@@ -21,6 +21,6 @@ public class Manager : MonoBehaviour
     {
         int r = Random.Range(0,levelBuilder.SpawnSpots.Count);
         
-        Instantiate(enemy,levelBuilder.SpawnSpots[r].transform.position,Quaternion.identity);
+        Instantiate(enemy,levelBuilder.SpawnSpots[r].transform.position,Quaternion.identity,this.gameObject.transform);
     }
 }

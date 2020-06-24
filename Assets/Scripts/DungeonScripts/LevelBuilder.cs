@@ -24,14 +24,17 @@ public class LevelBuilder : MonoBehaviour
     List<Room> placedRooms = new List<Room>();
 
     LayerMask roomLayerMask;
+    int floorCount = 0;
 
     Player player;
+    GameObject manager;
 
     void Start()
     {
         EnemyPathing = GetComponent<NavMeshSurface>();
         roomLayerMask = LayerMask.GetMask("Room");
-        StartCoroutine("GenerateLevel");   
+        StartCoroutine("GenerateLevel");
+        manager = GameObject.Find("GameManager"); 
     }
 
     IEnumerator GenerateLevel()
@@ -64,7 +67,7 @@ public class LevelBuilder : MonoBehaviour
         if(itemsPrefabs.Count >= 1)
         {
             Transform itemSpot = SpawnSpots[Random.Range(0,SpawnSpots.Count)].transform;
-            Instantiate(itemsPrefabs[Random.Range(0,itemsPrefabs.Count) ],itemSpot.position, itemSpot.rotation);
+            Instantiate(itemsPrefabs[Random.Range(0,itemsPrefabs.Count) ],itemSpot.position, itemSpot.rotation,manager.transform);
         }
         yield return interval;
 
@@ -75,10 +78,9 @@ public class LevelBuilder : MonoBehaviour
         print("level generation done");
 
         //place player
-        player = Instantiate(playerPrefab) as Player;
-        player.transform.position = startRoom.playerStart.position;
-        player.transform.rotation = startRoom.playerStart.rotation;
-
+        LoadPlayer();
+        yield return interval;
+        player.gameObject.GetComponent<CharacterController>().enabled = true;
 
         //yield return new WaitForSeconds(3);
         //ResetLevelGenerator();
@@ -260,7 +262,7 @@ public class LevelBuilder : MonoBehaviour
         }
 
     }
-    void ResetLevelGenerator()
+    public void ResetLevelGenerator()
     {
         //print("reset level builder");
 
@@ -279,13 +281,33 @@ public class LevelBuilder : MonoBehaviour
         {
             Destroy (room.gameObject);
         }
+        foreach(Transform child in manager.transform)
+        {
+            //wipe all enemyies and items
+            Destroy(child.gameObject);
+        }
         //clear lists
         placedRooms.Clear();
         availableDoorways.Clear();
         SpawnSpots.Clear();
 
+
         //reset Coroutine
         StartCoroutine("GenerateLevel");
+    }
+    void LoadPlayer()
+    {
+        if(floorCount == 0){
+            player = Instantiate(playerPrefab) as Player;
+            player.transform.position = startRoom.playerStart.position;
+            player.transform.rotation = startRoom.playerStart.rotation;
+        }else
+        {
+            //stops the player from gettting draged down in the void
+            player.gameObject.GetComponent<CharacterController>().enabled = false;
+            player.gameObject.transform.position = startRoom.playerStart.position;
+        }
+        floorCount++;
     }
 
     

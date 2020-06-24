@@ -73,7 +73,7 @@ public class EnemyAttack : MonoBehaviour
         if(Player.instance.currentHp > 0)
         {
             // ... damage the player.
-            Player.instance.TakeDamage (attackDamage);
+            Player.instance.TakeDamage (attackDamage,this);
         }
     }
 }

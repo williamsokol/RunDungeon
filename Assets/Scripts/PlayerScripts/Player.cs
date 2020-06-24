@@ -53,9 +53,18 @@ public class Player : MonoBehaviour
 
    }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage,EnemyAttack attcker)
     {
         currentHp -= damage*((Def-100)/100);
+
+        if (currentHp <= 0)
+        {
+            Die(attcker);
+        } 
+    }
+    void Die(EnemyAttack attacker)
+    {
+        //swap into the body of the enemy that killed you
     }
 
 }

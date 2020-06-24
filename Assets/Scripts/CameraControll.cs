@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraControll : MonoBehaviour
 {
+    private Vector3 velocity;
     public  Player player;
     private Vector3        offset;
 
@@ -11,10 +12,11 @@ public class CameraControll : MonoBehaviour
     {
         player = Player.instance;
         offset = player.transform.position - transform.position;
+        velocity = Vector3.zero;
     }
     void LateUpdate()
     {
         if(player != null)
-            transform.position = player.transform.position - offset;
+            transform.position = Vector3.SmoothDamp(transform.position,player.transform.position - offset,ref velocity,.3f);
     }
 }
