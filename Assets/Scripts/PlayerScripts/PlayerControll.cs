@@ -7,6 +7,7 @@ public class PlayerControll : MonoBehaviour
     private Transform           cam;
     private CharacterController charact;
     public  Animator            anim;
+    public PlayerAttack attack;
 
     public float Ycomponent;
     public float movingSpeed, i;
@@ -16,6 +17,7 @@ public class PlayerControll : MonoBehaviour
         i = movingSpeed;
         cam                 = Camera.main.transform;
         charact             = GetComponent<CharacterController>();
+        attack              = gameObject.GetComponentInChildren<PlayerAttack>();
     }
 
     void Update()
@@ -33,12 +35,16 @@ public class PlayerControll : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
+            // do an Attack
             int IsFight = Random.Range(1, 4);
             anim.SetInteger("IsFight", IsFight);
             movingSpeed = 0;
+            attack.StartAttack();
+            
         }else if(anim.GetCurrentAnimatorStateInfo(0).IsName("FightPose")){
-            print("test");
+           //revert to non attack mode
             movingSpeed = i;
+            attack.EndAttack();
         }
         if (Input.GetButtonDown("Fire2"))
         {

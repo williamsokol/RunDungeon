@@ -58,18 +58,18 @@ public class LevelBuilder : MonoBehaviour
 
         //places the end room
         PlaceEndRoom();
-
         yield return interval;
-        // place item
-        //print(SpawnSpots.Count +" "+ itemsPrefabs.Count);
-        Transform itemSpot = SpawnSpots[Random.Range(0,SpawnSpots.Count)].transform;
-        Instantiate(itemsPrefabs[Random.Range(0,itemsPrefabs.Count) ],itemSpot.position, itemSpot.rotation);
 
+        // place item
+        if(itemsPrefabs.Count >= 1)
+        {
+            Transform itemSpot = SpawnSpots[Random.Range(0,SpawnSpots.Count)].transform;
+            Instantiate(itemsPrefabs[Random.Range(0,itemsPrefabs.Count) ],itemSpot.position, itemSpot.rotation);
+        }
         yield return interval;
 
         // Build navMesh
         EnemyPathing.BuildNavMesh();
-        
         yield return interval;
 
         print("level generation done");
@@ -282,6 +282,7 @@ public class LevelBuilder : MonoBehaviour
         //clear lists
         placedRooms.Clear();
         availableDoorways.Clear();
+        SpawnSpots.Clear();
 
         //reset Coroutine
         StartCoroutine("GenerateLevel");

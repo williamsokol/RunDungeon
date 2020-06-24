@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
    void Awake()
    {
        instance = this;
-
+       GameObject.Find("FollowCamera").GetComponent<CameraControll>().getCamera();
    }
 
    public void UpdateItemStats(Item newItem)
@@ -51,4 +51,10 @@ public class Player : MonoBehaviour
         ItemSlots[DroppedItem.itemType] = null;
 
    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHp -= damage;
+    }
+
 }

@@ -2989,16 +2989,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4910356949692543849, guid: c64cb6a6f2fd8094fa34ca7ebc5f1c31,
-        type: 3}
-      propertyPath: ItemSlots.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6181109594389778012, guid: c64cb6a6f2fd8094fa34ca7ebc5f1c31,
-        type: 3}
-      propertyPath: m_Name
-      value: ' ShieldSlot'
-      objectReference: {fileID: 0}
     - target: {fileID: 7164019575580401525, guid: c64cb6a6f2fd8094fa34ca7ebc5f1c31,
         type: 3}
       propertyPath: m_Name
@@ -3059,26 +3049,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8046485617426608807, guid: c64cb6a6f2fd8094fa34ca7ebc5f1c31,
-        type: 3}
-      propertyPath: movingSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8046485617426608824, guid: c64cb6a6f2fd8094fa34ca7ebc5f1c31,
-        type: 3}
-      propertyPath: oneHanded
-      value: 
-      objectReference: {fileID: 8046485617096069530}
-    - target: {fileID: 8046485617426608824, guid: c64cb6a6f2fd8094fa34ca7ebc5f1c31,
-        type: 3}
-      propertyPath: twoHanded
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8046485617426608824, guid: c64cb6a6f2fd8094fa34ca7ebc5f1c31,
-        type: 3}
-      propertyPath: shield
-      value: 
-      objectReference: {fileID: 8046485617096069531}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c64cb6a6f2fd8094fa34ca7ebc5f1c31, type: 3}
 --- !u!114 &8046485617096069528 stripped
@@ -3093,15 +3063,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac9e29e96c400f49897028a62eaa48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &8046485617096069530 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4933723062555395403, guid: c64cb6a6f2fd8094fa34ca7ebc5f1c31,
-    type: 3}
-  m_PrefabInstance: {fileID: 8046485617096069527}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &8046485617096069531 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7847590155531763951, guid: c64cb6a6f2fd8094fa34ca7ebc5f1c31,
-    type: 3}
-  m_PrefabInstance: {fileID: 8046485617096069527}
-  m_PrefabAsset: {fileID: 0}

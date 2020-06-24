@@ -128,10 +128,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1696764838}
     m_Modifications:
-    - target: {fileID: 2128583239, guid: 9ee0b8bd6a73c5a42b1bb2ff33df3d25, type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
     - target: {fileID: 3121563964992745317, guid: 9ee0b8bd6a73c5a42b1bb2ff33df3d25,
         type: 3}
       propertyPath: m_Name
@@ -285,7 +281,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &462771487
 Transform:
   m_ObjectHideFlags: 0
@@ -312,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d853473919cfe2d458b7cb89fdc7c6ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 6
+  spawnRate: 12
   spawnAmonut: 0
   enemy: {fileID: 3121563964992745321, guid: 9ee0b8bd6a73c5a42b1bb2ff33df3d25, type: 3}
   levelBuilder: {fileID: 0}
@@ -428,7 +424,7 @@ MonoBehaviour:
   - {fileID: 6222305449489138699, guid: e69a2a525cae7bd47b739aa25e24726d, type: 3}
   iterationRange: {x: 3, y: 10}
   itemsPrefabs:
-  - {fileID: 6071112707625680298, guid: 6e04c72202c3ab44caf1b8e070ec6ecc, type: 3}
+  - {fileID: 2536815555765605942, guid: 152845fbe17eef8479632aee5864f15c, type: 3}
   SpawnSpots: []
   startRoom: {fileID: 763519835}
   endRoom: {fileID: 0}
@@ -486,18 +482,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 343f4afd81aa2f84eb84140bbc8048d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &845482619 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8046485617426608807, guid: c64cb6a6f2fd8094fa34ca7ebc5f1c31,
-    type: 3}
-  m_PrefabInstance: {fileID: 643928706}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9199557a693cec14a9e4bb4b570ed9ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1033523158
@@ -773,6 +757,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1943924332 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1943924332, guid: c64cb6a6f2fd8094fa34ca7ebc5f1c31,
+    type: 3}
+  m_PrefabInstance: {fileID: 1033523158}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1943924335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943924332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf4ab8d6c41c5284e8df57c3e69c3b3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  hitbox: {fileID: 0}
 --- !u!4 &2004693214 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1219499328460893360, guid: 6db1544c397571045b99e6b005286e0d,
@@ -798,6 +802,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4434328511286955736, guid: 8ec125daf4ea3c94b9a1d71d3511d67f,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434328511286955736, guid: 8ec125daf4ea3c94b9a1d71d3511d67f,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.11320752
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434328511286955736, guid: 8ec125daf4ea3c94b9a1d71d3511d67f,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.049661785
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434328511286955736, guid: 8ec125daf4ea3c94b9a1d71d3511d67f,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.057092946
+      objectReference: {fileID: 0}
     - target: {fileID: 4434328511286955738, guid: 8ec125daf4ea3c94b9a1d71d3511d67f,
         type: 3}
       propertyPath: m_Name
@@ -807,7 +831,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 845482619}
+      objectReference: {fileID: 0}
     - target: {fileID: 4434328511286955743, guid: 8ec125daf4ea3c94b9a1d71d3511d67f,
         type: 3}
       propertyPath: m_LocalPosition.x

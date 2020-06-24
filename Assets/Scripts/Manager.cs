@@ -12,7 +12,7 @@ public class Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("test");
+       
         levelBuilder = GameObject.Find("LevelBuilder").GetComponent<LevelBuilder>();
         InvokeRepeating("SpawnEnemies",8,spawnRate);
     }
