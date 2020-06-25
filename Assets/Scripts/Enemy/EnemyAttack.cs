@@ -30,7 +30,7 @@ public class EnemyAttack : MonoBehaviour
             playerInRange = true;
             print(gameObject +"this one");
             
-        }
+        }else{print(other);}
     }
 
     void OnTriggerExit (Collider other)

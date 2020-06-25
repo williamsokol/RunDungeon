@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
        Init();    
    }
 
-   void Init()
+   public void Init()
    {
        //gameObject.name = "Player";
        PlayerCore[0] = GetComponent<CharacterController>();
@@ -143,5 +143,6 @@ public class Player : MonoBehaviour
             
         }
         attacker.gameObject.GetComponent<Player>().Init();
+        attacker.gameObject.GetComponent<PlayerControll>().Init();
     }
 }

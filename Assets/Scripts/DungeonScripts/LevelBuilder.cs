@@ -310,6 +310,7 @@ public class LevelBuilder : MonoBehaviour
             player.gameObject.transform.position = startRoom.playerStart.position;
         }
         floorCount++;
+        Player.TorchHp++;
     }
 
     
