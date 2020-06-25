@@ -3,7 +3,8 @@ using System.Collections;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public Transform player;               // Reference to the player's position.
+    public Transform player;
+    public Animator anim;               // Reference to the player's position.
     //PlayerHealth playerHealth;      // Reference to the player's health.
     //EnemyHealth enemyHealth;        // Reference to this enemy's health.
     UnityEngine.AI.NavMeshAgent nav;               // Reference to the nav mesh agent.
@@ -16,12 +17,16 @@ public class EnemyMovement : MonoBehaviour
         //playerHealth = player.GetComponent <PlayerHealth> ();
         //enemyHealth = GetComponent <EnemyHealth> ();
         nav = GetComponent <UnityEngine.AI.NavMeshAgent> ();
+        anim = GetComponent<Animator>();
     }
 
 
-    void Update ()
+    void FixedUpdate ()
     {
-         nav.SetDestination (player.position);
+        
+        nav.SetDestination (player.position);
+
+
         /*// If the enemy and the player have health left...
         if(enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
         {

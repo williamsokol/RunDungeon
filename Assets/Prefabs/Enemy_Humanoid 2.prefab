@@ -1581,7 +1581,7 @@ MonoBehaviour:
   Def: 20
   Hp: 10
   currentHp: 10
-  AttackSpeed: 0.5
+  AttackSpeed: 1
 --- !u!114 &1133444686456725944
 MonoBehaviour:
   m_ObjectHideFlags: 0

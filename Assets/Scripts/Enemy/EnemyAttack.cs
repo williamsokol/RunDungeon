@@ -22,6 +22,7 @@ public class EnemyAttack : MonoBehaviour
         attackDamage = stats.Attack;
         
         //anim
+        anim = gameObject.GetComponent<Animator>();
     }
 
     void OnTriggerEnter (Collider other)
@@ -48,12 +49,20 @@ public class EnemyAttack : MonoBehaviour
     {
         // Add the time since Update was last called to the timer.
         timer += Time.deltaTime;
+        if (anim.GetInteger("IsFight") != 0)
+        {
+            anim.SetInteger("IsFight", 0);
+        }
 
         // If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
         if(timer >= attackSpeed && playerInRange && stats.currentHp > 0)
         {
             // ... attack.
+            
             Attack ();
+            print("test");
+            int IsFight = Random.Range(1, 4);
+            anim.SetInteger("IsFight", IsFight);
            
         }
 
@@ -70,6 +79,7 @@ public class EnemyAttack : MonoBehaviour
     {
         // Reset the timer.
         timer = 0f;
+        
         
         print(Player.instance.gameObject);
         // If the player has health to lose...
