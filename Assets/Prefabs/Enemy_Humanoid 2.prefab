@@ -1431,6 +1431,7 @@ GameObject:
   - component: {fileID: 5907768586495908223}
   - component: {fileID: -7260996938513567329}
   - component: {fileID: -968352173543614174}
+  - component: {fileID: 1133444686456725944}
   m_Layer: 0
   m_Name: Enemy_Humanoid 2
   m_TagString: Untagged
@@ -1581,6 +1582,30 @@ MonoBehaviour:
   Hp: 10
   currentHp: 10
   AttackSpeed: 0.5
+--- !u!114 &1133444686456725944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4465533843559260249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eda15147577602c46becba7fbce1103b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armors:
+  - {fileID: 2346156006063426058}
+  - {fileID: 6831248702301144945}
+  - {fileID: 583899640859516060}
+  - {fileID: 5791269880734513591}
+  - {fileID: 2769384845033568136}
+  helmets:
+  - {fileID: 7907514265270856143}
+  - {fileID: 2103844804114089005}
+  - {fileID: 145405375113490512}
+  - {fileID: 6116620242744238583}
+  - {fileID: 7985946426455532173}
 --- !u!1 &4489440221207584892
 GameObject:
   m_ObjectHideFlags: 0

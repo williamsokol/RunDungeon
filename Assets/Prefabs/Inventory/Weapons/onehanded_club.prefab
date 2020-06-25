@@ -171,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pikColliderBox: {fileID: 3497931525696685514}
   model: {fileID: 1540604565056371195}
-  Attack: 0
+  Attack: 2
   Def: 0
   Hp: 0
   itemType: 0

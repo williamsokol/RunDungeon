@@ -54,9 +54,12 @@ public class InvertoryUI : MonoBehaviour
         Time.timeScale = 1f;
         Transform[] objs = content.GetComponentsInChildren<Transform>();
         invUI.SetActive(false);
-        for (int i=1; i<=objs.Length; i++)
+        if (objs.Length > 1)
         {
-            Destroy(objs[i].gameObject);
+            for (int i = 1; i <= objs.Length; i++)
+            {
+                Destroy(objs[i].gameObject);
+            }
         }
     }
 }
