@@ -21,8 +21,7 @@ public class InvertoryUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I) && invUI.activeInHierarchy)
         {
             HideInventoryUI();
-        }
-        if (Input.GetKeyDown(KeyCode.I) && !invUI.activeInHierarchy)
+        }else if (Input.GetKeyDown(KeyCode.I) && !invUI.activeInHierarchy)
         {
             ShowInventoryUI();
         }
@@ -31,8 +30,9 @@ public class InvertoryUI : MonoBehaviour
     public void ShowInventoryUI()
     {
         invUI.SetActive(true);
+        //print("on");
         Time.timeScale = 0f;
-        /*
+        
         foreach(GameObject item in inentory.backpack)
         {
             print("test1");
@@ -46,13 +46,15 @@ public class InvertoryUI : MonoBehaviour
             itemUi._name.text   = item.GetComponent<Item>().name.ToString();
             itemUi._attack.text = item.GetComponent<Item>().Attack.ToString();
             itemUi._defend.text = item.GetComponent<Item>().Def.ToString();
-        }*/
+        }
        
     }
 
     public void HideInventoryUI()
     {
-        print("test");
+        invUI.SetActive(false);
+        //print("off");
+        
         invUI = gameObject.transform.GetChild(0).gameObject;
 
         Time.timeScale = 1f;
