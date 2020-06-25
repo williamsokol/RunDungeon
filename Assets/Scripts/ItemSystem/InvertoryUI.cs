@@ -32,9 +32,10 @@ public class InvertoryUI : MonoBehaviour
     {
         invUI.SetActive(true);
         Time.timeScale = 0f;
-
+        /*
         foreach(GameObject item in inentory.backpack)
         {
+            print("test1");
             GameObject _item = Instantiate(itemUIPrefab);
             _item.GetComponent<RectTransform>().SetParent(content);
 
@@ -45,12 +46,14 @@ public class InvertoryUI : MonoBehaviour
             itemUi._name.text   = item.GetComponent<Item>().name.ToString();
             itemUi._attack.text = item.GetComponent<Item>().Attack.ToString();
             itemUi._defend.text = item.GetComponent<Item>().Def.ToString();
-        }
+        }*/
+       
     }
 
     public void HideInventoryUI()
     {
         print("test");
+        invUI = gameObject.transform.GetChild(0).gameObject;
 
         Time.timeScale = 1f;
         Transform[] objs = content.GetComponentsInChildren<Transform>();

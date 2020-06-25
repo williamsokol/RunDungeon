@@ -12,12 +12,14 @@ public class PlayerControll : MonoBehaviour
     public float Ycomponent;
     public float movingSpeed, i;
 
-    void Start()
+    void Awake()
     {
         i = movingSpeed;
+    }
+    void Start()
+    {
         Init();
-        //print(charact);
-        
+        //print(charact);   
     }
     public void Init()
     {

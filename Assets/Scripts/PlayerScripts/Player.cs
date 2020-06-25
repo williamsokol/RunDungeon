@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
    public static int TorchHp;
 
     public Item[] ItemSlots = {null,null,null};
-    public Component[] PlayerCore;
+    public Component[] PlayerCore = new Component[4];
     public GameObject[] ChildernCore;
 
    public static Player instance;
