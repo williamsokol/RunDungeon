@@ -17,6 +17,7 @@ public class OneHandedWeapon : Item, IItem
 
         Animator anim = inventory.GetComponent<Animator>();
         anim.runtimeAnimatorController = fistContrl;
+        model.SetActive(false);
     }
 
     public void UseItem(Invertory inventory)
