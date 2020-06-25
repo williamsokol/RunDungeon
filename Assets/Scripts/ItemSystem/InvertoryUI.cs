@@ -50,6 +50,7 @@ public class InvertoryUI : MonoBehaviour
 
     public void HideInventoryUI()
     {
+        print("test");
 
         Time.timeScale = 1f;
         Transform[] objs = content.GetComponentsInChildren<Transform>();

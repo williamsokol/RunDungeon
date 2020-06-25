@@ -29,11 +29,11 @@ public class Player : MonoBehaviour
        instance = this;
        
        //gameObject.name = "Player";
-       /*PlayerCore[0] = GetComponent<CharacterController>();
+       PlayerCore[0] = GetComponent<CharacterController>();
        PlayerCore[1] = GetComponent<Invertory>();
        PlayerCore[2] = GetComponent<PlayerControll>();
        PlayerCore[3] = GetComponent<Player>();
-       */
+       
        currentHp = Hp;
        
        GameObject.Find("FollowCamera").GetComponent<CameraControll>().getCamera();
@@ -141,9 +141,9 @@ public class Player : MonoBehaviour
         {
             Vector3 savePos = child.transform.localPosition;
             Quaternion saveRot = child.transform.localRotation; 
-            child.transform.parent = attacker.transform;
-            child.transform.localPosition = savePos;
-            child.transform.localRotation = saveRot;
+            GameObject thing = Instantiate(child,attacker.transform);
+            thing.transform.localPosition = savePos;
+            thing.transform.localRotation = saveRot;
             
         }
 

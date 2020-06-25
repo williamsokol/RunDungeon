@@ -14,16 +14,19 @@ public class PlayerControll : MonoBehaviour
 
     void Start()
     {
+        i = movingSpeed;
         Init();
         //print(charact);
         
     }
     public void Init()
     {
-        i = movingSpeed;
+        
         cam                 = Camera.main.transform;
         charact             = GetComponent<CharacterController>();
+        charact.center      = new Vector3(0,1,0);
         attack              = gameObject.GetComponentInChildren<PlayerAttack>();
+        anim                = gameObject.GetComponent<Animator>();
     }
 
     void Update()
