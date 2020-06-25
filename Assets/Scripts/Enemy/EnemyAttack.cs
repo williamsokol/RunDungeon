@@ -7,6 +7,7 @@ public class EnemyAttack : MonoBehaviour
     public float attackSpeed;
     public int attackDamage;
 
+    public MusicPlayer sound;
     Animator anim;
     GameObject player;
     EnemyStats stats;
@@ -23,6 +24,7 @@ public class EnemyAttack : MonoBehaviour
         
         //anim
         anim = gameObject.GetComponent<Animator>();
+        //sound = GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>();
     }
 
     void OnTriggerEnter (Collider other)
@@ -49,10 +51,9 @@ public class EnemyAttack : MonoBehaviour
     {
         // Add the time since Update was last called to the timer.
         timer += Time.deltaTime;
-        if (anim.GetInteger("IsFight") != 0)
-        {
-            anim.SetInteger("IsFight", 0);
-        }
+        
+        anim.SetInteger("IsFight", 0);
+        
 
         // If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
         if(timer >= attackSpeed && playerInRange && stats.currentHp > 0)
@@ -87,6 +88,7 @@ public class EnemyAttack : MonoBehaviour
         {
             // ... damage the player.
             Player.instance.TakeDamage (attackDamage,this);
+            sound.AttackedSFX();
         }
     }
 }

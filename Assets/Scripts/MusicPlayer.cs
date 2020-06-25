@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour
 {
+    public SFX soundplayer;
+
     private AudioSource musikPlayer;
     public int          trakNumber;
     public  AudioClip[] traks;
@@ -30,4 +32,21 @@ public class MusicPlayer : MonoBehaviour
             trakNumber = 0;
         }
     }
+
+    public void AttackSFX()
+    {
+        
+        soundplayer.AttackSFX();
+    }
+    public void AttackedSFX()
+    {
+        
+        soundplayer.AttackedSFX();
+    }
+
+    public void WalkSFX()
+    {
+        soundplayer.WalkSFX();
+    }
+
 }
