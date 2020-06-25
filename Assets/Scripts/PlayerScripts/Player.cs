@@ -18,6 +18,17 @@ public class Player : MonoBehaviour
 
    void Awake()
    {
+       //set up player
+       Init();    
+   }
+
+   void Init()
+   {
+       PlayerCore[0] = GetComponent<CharacterController>();
+       PlayerCore[1] = GetComponent<Invertory>();
+       PlayerCore[2] = GetComponent<PlayerControll>();
+       PlayerCore[3] = GetComponent<Player>();
+       print(gameObject);
        currentHp = Hp;
        instance = this;
        GameObject.Find("FollowCamera").GetComponent<CameraControll>().getCamera();
@@ -106,10 +117,12 @@ public class Player : MonoBehaviour
                                                         BindingFlags.Instance);
             
             Component targetComp = attacker.gameObject.AddComponent(PlayerCore[a].GetType()) as Component;
+            
             int i = 0;
             for(i = 0; i < sourceFields.Length; i++) {
                 var value = sourceFields[i].GetValue(sourceComp);
-            sourceFields[i].SetValue(targetComp, value);
+                sourceFields[i].SetValue(targetComp, value);
+                //print( targetComp+" "+sourceFields[i]);
             }
             
             //Destroy(sourceComp);
@@ -124,6 +137,6 @@ public class Player : MonoBehaviour
             child.transform.localRotation = saveRot;
             
         }
-        
+        attacker.gameObject.GetComponent<Player>().Init();
     }
 }

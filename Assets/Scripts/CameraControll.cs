@@ -13,6 +13,7 @@ public class CameraControll : MonoBehaviour
         player = Player.instance;
         offset = player.transform.position - transform.position;
         velocity = Vector3.zero;
+        print("test2");
     }
     void LateUpdate()
     {

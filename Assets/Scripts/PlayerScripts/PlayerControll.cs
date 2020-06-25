@@ -61,7 +61,7 @@ public class PlayerControll : MonoBehaviour
 
     void Move()
     {
-        print("test");
+        //print("test");
         Ycomponent -= 5 * Time.deltaTime;
         
         

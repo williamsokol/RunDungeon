@@ -1929,10 +1929,14 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   PlayerCore:
-  - {fileID: 8046485617426608806}
-  - {fileID: 8046485617426608824}
-  - {fileID: 8046485617426608807}
-  - {fileID: 4910356949692543849}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  ChildernCore:
+  - {fileID: 8046485617474968983}
+  - {fileID: 8046485616016608082}
+  - {fileID: 1943924332}
 --- !u!1 &7644264066414578180
 GameObject:
   m_ObjectHideFlags: 0
