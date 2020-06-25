@@ -5,14 +5,17 @@ using UnityEngine;
 public class CameraControll : MonoBehaviour
 {
     private Vector3 velocity;
-    public  Player player;
+    public  Player  player;
     private Vector3        offset;
 
     public void getCamera()
     {
-        player = Player.instance;
-        offset = player.transform.position - transform.position;
-        velocity = Vector3.zero;
+        if (player == null)
+        {
+            player = Player.instance;
+            offset = player.transform.position - transform.position;
+            velocity = Vector3.zero;
+        }
        
     }
     void LateUpdate()

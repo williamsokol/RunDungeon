@@ -20,7 +20,6 @@ public class InvertoryUI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I) && invUI.activeInHierarchy)
         {
-            //print("tryingCloseUI");
             HideInventoryUI();
         }
         if (Input.GetKeyDown(KeyCode.I) && !invUI.activeInHierarchy)
@@ -34,20 +33,19 @@ public class InvertoryUI : MonoBehaviour
         invUI.SetActive(true);
         Time.timeScale = 0f;
 
-        //Dictionary<GameObject, GameObject> invent = new Dictionary<GameObject, GameObject>();
-
         foreach(GameObject item in inentory.backpack)
         {
             GameObject _item = Instantiate(itemUIPrefab);
             _item.GetComponent<RectTransform>().SetParent(content);
-            //invent.Add(_item, item);
 
-            ItemUI itemUi      = _item.GetComponent<ItemUI>();
-            itemUi.inventory   = inentory;
-            itemUi.item        = item.GetComponent<Item>();
+            ItemUI itemUi       = _item.GetComponent<ItemUI>();
+            itemUi.inventory    = inentory;
+            itemUi.item         = item.GetComponent<Item>();
 
+            itemUi._name.text   = item.GetComponent<Item>().name.ToString();
+            itemUi._attack.text = item.GetComponent<Item>().Attack.ToString();
+            itemUi._defend.text = item.GetComponent<Item>().Def.ToString();
         }
-        //print("Dictionary have" + invent.Count);
     }
 
     public void HideInventoryUI()

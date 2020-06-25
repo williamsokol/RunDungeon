@@ -97,6 +97,7 @@ MonoBehaviour:
   Hp: 0
   itemType: 0
   animOver: {fileID: 22100000, guid: 94dbe691a9b8f774ba03b85e0e7e2d59, type: 2}
+  fistContrl: {fileID: 9100000, guid: 86b350b9eb70a5c46bb29cc47f718d4b, type: 2}
 --- !u!54 &-4160154529328967921
 Rigidbody:
   m_ObjectHideFlags: 0
