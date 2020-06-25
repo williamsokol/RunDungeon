@@ -28,6 +28,7 @@ public class EnemyAttack : MonoBehaviour
         if(other.gameObject == player)
         {
             playerInRange = true;
+            print(gameObject +"this one");
             
         }
     }
@@ -68,7 +69,7 @@ public class EnemyAttack : MonoBehaviour
         // Reset the timer.
         timer = 0f;
         
-
+        print(Player.instance.gameObject);
         // If the player has health to lose...
         if(Player.instance.currentHp > 0)
         {

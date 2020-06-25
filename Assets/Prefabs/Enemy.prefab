@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Attack: 10
   Def: 20
-  Hp: 0
+  Hp: 10
   currentHp: 10
   AttackSpeed: 0.5
 --- !u!1 &3134373576905804980

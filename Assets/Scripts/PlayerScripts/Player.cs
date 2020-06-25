@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 {
    public int Attack,Def, Hp;
    public int currentHp;
+   public static int TorchHp;
 
     public Item[] ItemSlots = {null,null,null};
     public Component[] PlayerCore;
@@ -24,11 +25,12 @@ public class Player : MonoBehaviour
 
    void Init()
    {
+       //gameObject.name = "Player";
        PlayerCore[0] = GetComponent<CharacterController>();
        PlayerCore[1] = GetComponent<Invertory>();
        PlayerCore[2] = GetComponent<PlayerControll>();
        PlayerCore[3] = GetComponent<Player>();
-       print(gameObject);
+       
        currentHp = Hp;
        instance = this;
        GameObject.Find("FollowCamera").GetComponent<CameraControll>().getCamera();
@@ -70,7 +72,9 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage,EnemyAttack attcker)
     {
-        currentHp -= damage*((100-Def)/100);
+        float calculatedDmg = (float)damage*((100-(float)Def)/100);
+        print(calculatedDmg);
+        currentHp -= (int)calculatedDmg;
 
         if (currentHp <= 0)
         {
@@ -85,6 +89,7 @@ public class Player : MonoBehaviour
         //Component component = PlayerControll;
         MoveControlls(attacker);
         Destroy(gameObject);
+        TorchHp -= 1; 
         
     }
     void MoveControlls(EnemyAttack attacker)

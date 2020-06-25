@@ -20,7 +20,7 @@ public class EnemyStats : MonoBehaviour
    void Die()
    {
        gameObject.GetComponentInChildren<BoxCollider>().enabled = false;
-       Destroy (gameObject, 2f);
+       Destroy (gameObject, 1f);
        //play death anim
    }
 }
