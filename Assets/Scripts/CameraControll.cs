@@ -10,12 +10,13 @@ public class CameraControll : MonoBehaviour
 
     public void getCamera()
     {
-        if (player == null)
-        {
+        
+            
             player = Player.instance;
             offset = player.transform.position - transform.position;
             velocity = Vector3.zero;
-        }
+            //print(offset);
+
        
     }
     void LateUpdate()

@@ -16,6 +16,7 @@ public class EnemyAttack : MonoBehaviour
     void Awake()
     {
         player = Player.instance.gameObject;
+        //print(player);
         stats  = gameObject.GetComponent<EnemyStats>();
         attackSpeed = stats.AttackSpeed;
         attackDamage = stats.Attack;
@@ -27,10 +28,11 @@ public class EnemyAttack : MonoBehaviour
     {
         if(other.gameObject == player)
         {
+            print("test");
             playerInRange = true;
             print(gameObject +"this one");
             
-        }else{print(other);}
+        }else{}
     }
 
     void OnTriggerExit (Collider other)

@@ -505,6 +505,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7593997358760274197, guid: 93a940749cab6404b800c79dfc642641,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93a940749cab6404b800c79dfc642641, type: 3}
 --- !u!1001 &643928706
@@ -842,6 +847,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5828629726473137241, guid: c3fe6d50e88505145b352a24eef9b0ea,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828629726473137241, guid: c3fe6d50e88505145b352a24eef9b0ea,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7793229590080315569, guid: c3fe6d50e88505145b352a24eef9b0ea,
         type: 3}
       propertyPath: m_Name
@@ -1176,6 +1191,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FollowCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 4434328511286955738, guid: 8ec125daf4ea3c94b9a1d71d3511d67f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4434328511286955742, guid: 8ec125daf4ea3c94b9a1d71d3511d67f,
         type: 3}
       propertyPath: player
@@ -1184,17 +1204,17 @@ PrefabInstance:
     - target: {fileID: 4434328511286955743, guid: 8ec125daf4ea3c94b9a1d71d3511d67f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4434328511286955743, guid: 8ec125daf4ea3c94b9a1d71d3511d67f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4434328511286955743, guid: 8ec125daf4ea3c94b9a1d71d3511d67f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4434328511286955743, guid: 8ec125daf4ea3c94b9a1d71d3511d67f,
         type: 3}

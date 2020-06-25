@@ -1886,9 +1886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shieldSlot: {fileID: 7847590155531763951}
   weaponSlot: {fileID: 4933723062555395403}
-  armor: {fileID: 0}
   weapon: {fileID: 0}
-  sheld: {fileID: 0}
   crate: {fileID: 8046485616016608081}
   backpack: []
 --- !u!114 &8046485617426608807
@@ -1920,19 +1918,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bdbcc161e129a4e8035dd83e0131cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Attack: 5
-  Def: 0
-  Hp: 20
   currentHp: 0
   ItemSlots:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   PlayerCore:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8046485617426608806}
+  - {fileID: 8046485617426608824}
+  - {fileID: 8046485617426608807}
+  - {fileID: 4910356949692543849}
   ChildernCore:
   - {fileID: 8046485617474968983}
   - {fileID: 8046485616016608082}

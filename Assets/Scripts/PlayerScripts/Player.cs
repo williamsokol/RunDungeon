@@ -7,7 +7,7 @@ using UnityEngine.AI;
 
 public class Player : MonoBehaviour
 {
-   public int Attack,Def, Hp;
+   public static int Attack=10,Def=10, Hp = 10;
    public int currentHp;
    public static int TorchHp;
 
@@ -17,23 +17,27 @@ public class Player : MonoBehaviour
 
    public static Player instance;
 
-   void Awake()
+   void Start()
    {
+       //print("test");
        //set up player
        Init();    
    }
 
    public void Init()
    {
+       instance = this;
+       
        //gameObject.name = "Player";
-       PlayerCore[0] = GetComponent<CharacterController>();
+       /*PlayerCore[0] = GetComponent<CharacterController>();
        PlayerCore[1] = GetComponent<Invertory>();
        PlayerCore[2] = GetComponent<PlayerControll>();
        PlayerCore[3] = GetComponent<Player>();
-       
+       */
        currentHp = Hp;
-       instance = this;
+       
        GameObject.Find("FollowCamera").GetComponent<CameraControll>().getCamera();
+       //print("test");
    }
 
    public void UpdateItemStats(Item newItem)
@@ -142,7 +146,8 @@ public class Player : MonoBehaviour
             child.transform.localRotation = saveRot;
             
         }
-        attacker.gameObject.GetComponent<Player>().Init();
-        attacker.gameObject.GetComponent<PlayerControll>().Init();
+
+        //attacker.gameObject.GetComponent<Player>().Init();
+        //attacker.gameObject.GetComponent<PlayerControll>().Init();
     }
 }
