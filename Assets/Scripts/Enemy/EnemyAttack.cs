@@ -24,7 +24,7 @@ public class EnemyAttack : MonoBehaviour
         
         //anim
         anim = gameObject.GetComponent<Animator>();
-        //sound = GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>();
+        sound = GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>();
     }
 
     void OnTriggerEnter (Collider other)
