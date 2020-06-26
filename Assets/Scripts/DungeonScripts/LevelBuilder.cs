@@ -68,7 +68,7 @@ public class LevelBuilder : MonoBehaviour
         if(itemsPrefabs.Count >= 1)
         {
             Transform itemSpot = SpawnSpots[Random.Range(0,SpawnSpots.Count)].transform;
-            Instantiate(itemsPrefabs[Random.Range(0,itemsPrefabs.Count) ],itemSpot.position, itemSpot.rotation,manager.transform);
+            //Instantiate(itemsPrefabs[Random.Range(0,itemsPrefabs.Count) ],itemSpot.position, itemSpot.rotation,manager.transform);
         }
         yield return interval;
 

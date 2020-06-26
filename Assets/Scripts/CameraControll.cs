@@ -8,14 +8,18 @@ public class CameraControll : MonoBehaviour
     public  Player  player;
     private Vector3        offset;
 
+    
+    
+    
+    
     public void getCamera()
     {
         
             
             player = Player.instance;
-            offset = player.transform.position - transform.position;
+            //offset = player.transform.position - transform.position;
             velocity = Vector3.zero;
-            //print(offset);
+            print("offset");
 
        
     }

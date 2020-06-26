@@ -31,9 +31,9 @@ public class EnemyAttack : MonoBehaviour
     {
         if(other.gameObject == player)
         {
-            print("test");
+            //print("test");
             playerInRange = true;
-            print(gameObject +"this one");
+            //print(gameObject +"this one");
             
         }else{}
     }
@@ -61,7 +61,7 @@ public class EnemyAttack : MonoBehaviour
             // ... attack.
             
             Attack ();
-            print("test");
+           // print("test");
             int IsFight = Random.Range(1, 4);
             anim.SetInteger("IsFight", IsFight);
            

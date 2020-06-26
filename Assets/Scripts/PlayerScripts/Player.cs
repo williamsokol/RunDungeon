@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
        
        currentHp = Hp;
        
-       GameObject.Find("FollowCamera").GetComponent<CameraControll>().getCamera();
+       GameObject.Find("Cam target").GetComponent<CameraControll>().getCamera();
        //print("test");
    }
 
